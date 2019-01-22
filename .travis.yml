@@ -1,0 +1,17 @@
+language: java
+jdk:
+  - openjdk8
+
+# これでdockerコンテナとして立ち上がるので起動が速い
+sudo: false
+
+env:
+
+# このセクションを挟まないと勝手にgo getを走らせようとしてこける
+install: true
+
+before_script:
+
+# ビルドを実行
+script:
+  - gradle test
